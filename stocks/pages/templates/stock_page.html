@@ -1,0 +1,81 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title_ %}
+    <title>Stocks</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    {% comment %} \<script src="https://cdn.plot.ly/plotly-2.30.0.min.js" charset="utf-8"></script>  {% endcomment %}
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        .my_plot {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+{% endblock title_ %}
+
+{% block content %}
+
+<div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="normal" name="chart" value="normal" checked>
+    <label class="form-check-label" for="flexSwitchCheckDefault">Normal</label>
+  </div>
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="upDown" name='chart' value="upDown">
+    <label class="form-check-label" for="flexSwitchCheckChecked">Up Down</label>
+  </div>
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="volume" name='chart' value="volume">
+    <label class="form-check-label" for="flexSwitchCheckChecked">Volume</label>
+  </div>
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="bollinger" name='chart' value="bollinger">
+    <label class="form-check-label" for="flexSwitchCheckChecked">Bollinger</label>
+  </div>
+
+<div class="tabs">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="reliance-tab" data-bs-toggle="tab" data-bs-target="#reliance" type="button" role="tab" aria-controls="reliance" aria-selected="true">Reliance</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="hdfc-tab" data-bs-toggle="tab" data-bs-target="#hdfc" type="button" role="tab" aria-controls="hdfc" aria-selected="false">HDFC</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="stock-tab" data-bs-toggle="tab" data-bs-target="#stock" type="button" role="tab" aria-controls="stock" aria-selected="false">Stock 3</button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active my_tab" id="reliance" role="tabpanel" aria-labelledby="reliance-tab">
+            <div id="stock1-graph" class='my_plot'></div>
+        </div>
+        <div class="tab-pane fade my_tab" id="hdfc" role="tabpanel" aria-labelledby="hdfc-tab">
+            <div id="stock2-graph" class='my_plot'></div>
+        </div>
+        <div class="tab-pane fade my_tab" id="stock" role="tabpanel" aria-labelledby="stock-tab">
+            <h3>Nothing to see here...</h3>
+        </div>
+    </div>
+</div>
+
+{% comment %} 
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id = 'my_dropdown'>
+    <option selected value="reliance">Reliance</option>
+    <option value="hdfc">HDFC Bank</option>
+    <option value="nifty">Nifty 50</option>
+</select> {% endcomment %}
+
+<script id="context-data" type="application/json">{{ data|safe }}</script>
+{% comment %} <h3>Plot 3: original</h3> {% endcomment %}
+{% comment %} <div id="plot" style="width:1000px;height:500px;"></div> {% endcomment %}
+
+
+    <script src="{% static 'tab_bar.js' %}"></script>
+    <script src="{% static 'stock_chart.js' %}"></script>
+    <script src="{% static 'check_box.js ' %}"></script>
+    <button data-url="{% url 'buy' %}"  id ="buyButton" type="button" class="btn btn-dark"  style=" position: absolute; top: 300px; left: 1050px;">Buy</button>
+    <button data-url="{% url 'sell' %}"  id="sellButton" type="button" class="btn btn-dark" style=" position: absolute; top: 340px; left: 1050px;">Sell</button>
+
+{% endblock content %}

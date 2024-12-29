@@ -1,0 +1,60 @@
+INFO Logging started...
+WARNING Not Found: /stocks/
+WARNING Not Found: /stocks/
+WARNING "GET /stocks/?symbol=reliance&changed=false HTTP/1.1" 404 2669
+WARNING "GET /stocks/?symbol=reliance&changed=false HTTP/1.1" 404 2669
+WARNING Not Found: /stocks/
+WARNING Not Found: /stocks/
+WARNING "GET /stocks/?symbol=reliance&changed=false HTTP/1.1" 404 2669
+WARNING "GET /stocks/?symbol=reliance&changed=false HTTP/1.1" 404 2669
+WARNING Not Found: /stocks/
+WARNING Not Found: /stocks/
+WARNING "GET /stocks/?symbol=reliance&changed=false HTTP/1.1" 404 2669
+WARNING "GET /stocks/?symbol=reliance&changed=false HTTP/1.1" 404 2669
+WARNING Not Found: /stocks/
+WARNING Not Found: /stocks/
+WARNING "GET /stocks/?symbol=reliance&changed=false HTTP/1.1" 404 2669
+WARNING "GET /stocks/?symbol=reliance&changed=false HTTP/1.1" 404 2669
+INFO Logging started...
+INFO 2024-05-10T10:18:26.672+05:30: Hold..., avg buy: 2795.810, avg sell: 2796.760, total bq: 136, total sq: 91
+INFO 2024-05-10T10:18:31.645+05:30: Hold..., avg buy: 2795.640, avg sell: 2796.380, total bq: 534, total sq: 137
+INFO 2024-05-10T10:18:36.654+05:30: Hold..., avg buy: 2795.460, avg sell: 2796.470, total bq: 107, total sq: 107
+INFO 2024-05-10T10:18:43.242+05:30: Hold..., avg buy: 2795.700, avg sell: 2796.680, total bq: 219, total sq: 114
+INFO 2024-05-10T10:18:46.685+05:30: Hold..., avg buy: 2795.960, avg sell: 2796.430, total bq: 160, total sq: 110
+INFO 2024-05-10T10:18:51.687+05:30: Hold..., avg buy: 2795.800, avg sell: 2796.660, total bq: 441, total sq: 135
+INFO 2024-05-10T10:19:02.088+05:30: Hold..., avg buy: 2795.970, avg sell: 2796.350, total bq: 570, total sq: 137
+INFO 2024-05-10T10:19:02.062+05:30: Hold..., avg buy: 1450.900, avg sell: 1451.200, total bq: 546, total sq: 218
+INFO 2024-05-10T10:19:05.224+05:30: Hold..., avg buy: 1450.900, avg sell: 1451.150, total bq: 411, total sq: 1297
+INFO 2024-05-10T10:19:05.243+05:30: Hold..., avg buy: 2795.940, avg sell: 2796.410, total bq: 559, total sq: 537
+INFO 2024-05-10T10:19:10.233+05:30: Hold..., avg buy: 2796.060, avg sell: 2796.720, total bq: 458, total sq: 454
+CRITICAL 2024-05-10T10:19:10.271+05:30: Sell!!!, avg buy: 1450.450, avg sell: 1450.850, total bq: 54, total sq: 2395, strength: 1.2668388357646465
+INFO 2024-05-10T10:19:15.258+05:30: Hold..., avg buy: 1450.250, avg sell: 1450.690, total bq: 1288, total sq: 731
+INFO 2024-05-10T10:19:15.274+05:30: Hold..., avg buy: 2795.940, avg sell: 2796.540, total bq: 478, total sq: 442
+CRITICAL 2024-05-10T10:19:23.225+05:30: Sell!!!, avg buy: 1450.150, avg sell: 1450.540, total bq: 1053, total sq: 2772, strength: 1.2452013680463403
+INFO 2024-05-10T10:19:23.276+05:30: Hold..., avg buy: 2795.890, avg sell: 2796.320, total bq: 537, total sq: 529
+INFO 2024-05-10T10:19:25.168+05:30: Hold..., avg buy: 1450.150, avg sell: 1450.400, total bq: 574, total sq: 1953
+INFO 2024-05-10T10:19:25.221+05:30: Hold..., avg buy: 2796.000, avg sell: 2796.380, total bq: 600, total sq: 515
+INFO 2024-05-10T10:19:31.359+05:30: Hold..., avg buy: 2795.980, avg sell: 2796.390, total bq: 811, total sq: 162
+CRITICAL 2024-05-10T10:19:31.359+05:30: Sell!!!, avg buy: 1450.200, avg sell: 1450.550, total bq: 834, total sq: 2014, strength: 1.2458993508759622
+INFO 2024-05-10T10:19:35.255+05:30: Hold..., avg buy: 1449.970, avg sell: 1450.300, total bq: 894, total sq: 1384
+INFO 2024-05-10T10:19:35.277+05:30: Hold..., avg buy: 2795.820, avg sell: 2796.250, total bq: 585, total sq: 56
+INFO 2024-05-10T10:19:40.223+05:30: Hold..., avg buy: 1449.950, avg sell: 1450.300, total bq: 535, total sq: 864
+INFO 2024-05-10T10:19:40.237+05:30: Hold..., avg buy: 2795.650, avg sell: 2796.390, total bq: 584, total sq: 99
+INFO 2024-05-10T10:19:45.327+05:30: Hold..., avg buy: 2795.710, avg sell: 2796.240, total bq: 233, total sq: 125
+CRITICAL 2024-05-10T10:19:45.317+05:30: Sell!!!, avg buy: 1450.150, avg sell: 1450.430, total bq: 174, total sq: 2075, strength: 1.237523556920501
+INFO 2024-05-10T10:19:52.126+05:30: Hold..., avg buy: 2795.850, avg sell: 2796.300, total bq: 267, total sq: 88
+INFO 2024-05-10T10:19:57.097+05:30: Hold..., avg buy: 2795.960, avg sell: 2796.530, total bq: 331, total sq: 121
+INFO 2024-05-10T10:20:02.112+05:30: Hold..., avg buy: 2795.950, avg sell: 2796.560, total bq: 253, total sq: 149
+INFO Logging started...
+INFO Logging started...
+INFO Logging started...
+INFO Logging started...
+WARNING Not Found: /New Brunswick/
+WARNING Not Found: /New Brunswick/
+WARNING "GET /New%20Brunswick/ HTTP/1.1" 404 3078
+WARNING "GET /New%20Brunswick/ HTTP/1.1" 404 3078
+WARNING Not Found: /favicon.ico/
+WARNING Not Found: /favicon.ico/
+WARNING "GET /favicon.ico/ HTTP/1.1" 404 3070
+WARNING "GET /favicon.ico/ HTTP/1.1" 404 3070
+INFO Logging started...

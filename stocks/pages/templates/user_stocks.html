@@ -1,0 +1,30 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}
+    <title>User Stocks</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Stocks for {{ username }}</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                <th>Stock Name</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in user_stocks %}
+            <tr>
+                <td>{{ stock.stock_name }}</td>
+                <td>{{ stock.quantity }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+        </div>
+        </div>
+        {% endblock content %}

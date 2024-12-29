@@ -1,0 +1,84 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}
+<title>Sell</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post" action="{% url 'sell' %}" class="mt-5">
+                {% csrf_token %}
+                <input type="hidden" id="stock_name_input" name="stock_name" value="{{ stock_name }}">
+                <!-- Hidden input for stock name -->
+                <input type="hidden" id="current_price_input" name="current_price">
+
+                <h1 class="text-center">Sell</h1>
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                <a href="{% url 'user_stocks' %}" class="btn btn-primary">Go to your stocks page</a>
+                <a href="{% url 'stocks' %}" class="btn btn-primary">Go back to stocks page</a>
+                {% endif %}
+
+                <div class="form-group">
+                    <h3>Share - <span id="share_name">{{ stock_name }}</span></h3>
+                </div>
+
+                <div class="form-group">
+                    <h3>Current Price - <span id="current_price">{{ current_price }}</span></h3>
+                </div>
+
+                <div class="form-group">
+                    <h3>Quantity of shares</h3>
+                    <input name="quantity" type="number" id="quantityInput" class="form-control" min="0" value="1">
+                </div>
+
+                <div class="form-group">
+                    <h3>Total Price</h3>
+                    <h3 id="total_price"></h3>
+                </div>
+
+                <button type="submit" id="button_id" class="btn btn-primary">Sell Now</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    var Details = sessionStorage.getItem('Details');
+    if (Details) {
+        var shareName = document.getElementById('share_name');
+        var currentPrice = document.getElementById('current_price');
+        var quantityInput = document.getElementById('quantityInput');
+        var totalPrice = document.getElementById('total_price');
+        var stockNameInput = document.getElementById('stock_name_input'); // Hidden input for stock name
+        var currentPriceInput = document.getElementById('current_price_input');
+
+        var details = JSON.parse(Details);
+        shareName.innerHTML = details.symbol; // Display share symbol
+        currentPrice.innerHTML = details.current_price; // Display current price
+        stockNameInput.value = details.symbol; // Set the value of hidden input to stock name
+        currentPriceInput.value = details.current_price; // Set the value of hidden input to current price
+
+        // Function to calculate total price
+        function calculateTotalPrice() {
+            var price = parseFloat(details.current_price);
+            var quantity = parseFloat(quantityInput.value); // Parse as float to handle decimal values
+            var total = price * quantity;
+            totalPrice.innerHTML = total.toFixed(2); // Display total price with 2 decimal places
+        }
+
+        // Call the function when quantity changes
+        quantityInput.addEventListener('input', calculateTotalPrice);
+
+        // Initialize total price
+        calculateTotalPrice();
+    } else {
+        console.log('No hold details found in sessionStorage');
+    }
+</script>
+{% endblock content %}

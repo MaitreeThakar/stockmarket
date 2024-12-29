@@ -1,0 +1,64 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}
+<title>User Stocks</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Stocks for {{ username }}</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Date</th>
+                    <th>Stock Name</th>
+                    <th>Quantity</th>
+                    <th>Buy Price</th>
+                    <th>Sell Price</th>
+                    <th>Extra Charges</th>
+                    <th>Total</th>
+                    <th>Buy</th>
+                    <!-- Add more table headers for other fields -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for trade in trades %}
+                <tr>
+                    <td>{{ trade.trade_date }}</td>
+                    <td>{{ trade.stock_name }}</td>
+                    <td>{{ trade.quantity }}</td>
+                    <td>{{ trade.buy_price }}</td>
+                    <td>{{ trade.sell_price }}</td>
+                    <td>{{ trade.extra_charges }}</td>
+                    <td>{{ trade.total }}</td>
+                    <td>{{ trade.is_buy }}</td>
+                    <!-- Add more table cells for other fields -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+                <h3 class="font-weight-bold">Total Profit/Loss : <span
+                        class="{% if total_sum >= 0 %}text-success{% else %}text-danger{% endif %}">{{ total_sum }}</span></h3>
+
+    </div>
+    <div class="container mt-5">
+        <!-- Your existing content -->
+        <div class="stock-summary mt-5">
+            <h2>What happened...</h2>
+            <div class="row">
+                {% for stock in stock_summary %}
+                <div class="col-md-4 mb-4">
+                    <div class="stock-card">
+                        <h4>{{ stock.stock_name }}</h4>
+                        <p>Remaining Quantity: {{ stock.remaining_quantity }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
